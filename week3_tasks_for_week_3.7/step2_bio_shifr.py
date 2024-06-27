@@ -1,39 +1,36 @@
-def making_shifr(A):
+def Making_shifr(B):
+    n = ''
     strok = ''
-    for i in A:
-        n = ''
-        if i == 'a':
-            n = '*'
-        elif i == 'b':
-            n = 'd'
-        elif i == 'd':
-            n = '#'
-        elif i == 'c':
-            n = '%'
+    for i in B:
+        n = Shifr[i]
         strok = strok + n
-    return(strok)
-
-def unmaking_shifr(A):
+    return (strok)
+def Unmaking_shifr(B1):
+    n = ''
     strok = ''
-    for i in A:
-        n = ''
-        if i == '*':
-            n = 'a'
-        if i == 'd':
-            n = 'b'
-        if i == '#':
-            n = 'd'
-        if i == '%':
-            n = 'c'
+    for i in B1:
+        n = Shifr1[i]
         strok = strok + n
-    return(strok)
-A = input()
-A = input()
+    return (strok)
 
-A = input()
-A = making_shifr(A)
-print(A)
+Shifr = {}
+Shifr1 = {}
+count = 0
+A = input() # исходный алфавит
+A1 = input() # закодированный алфавит
+for i in A:
+    Shifr[i] = A1[count]
+    count += 1
+count = 0
+for i in A1:
+    Shifr1[i] = A[count]
+    count += 1
 
-A = input()
-A = unmaking_shifr(A)
-print(A)
+
+B = input()
+B = Making_shifr(B)
+print(B)
+
+B1 = input()
+B1 = Unmaking_shifr(B1)
+print(B1)
